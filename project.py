@@ -55,10 +55,38 @@ for i in range(12, 21):
         if logreg.predict_proba([[i]])[0][j] >= logreg.predict_proba([[i]])[0][index]:
             index = j
     arr[i-12] = index
-print(arr)
+# print(arr) 
 # 시간별 카테고리 결과
 for i in range (9):
     arr[i] = logreg.classes_[arr[i]]
-print(arr)
+# print(arr)
+
+# 김형국 12시
+arr2 = [0] * 9
+if name == "김형국":
+    for j in range (9):
+        arr2[j] = logreg.predict_proba([[12]])[0][j]
+    arr2.sort()
+    for i in range(9):
+        for j in range(9):
+            if arr2[i] == logreg.predict_proba([[12]])[0][j]:
+                arr2[i] = j
+    for i in range (9):
+        arr2[i] = logreg.classes_[arr2[i]]
+    print(arr2)
+
+# 김건휘 18시
+arr2 = [0] * 9
+if name == "김건휘":
+    for j in range (9):
+        arr2[j] = logreg.predict_proba([[20]])[0][j]
+    arr2.sort()
+    for i in range(9):
+        for j in range(9):
+            if arr2[i] == logreg.predict_proba([[20]])[0][j]:
+                arr2[i] = j
+    for i in range (9):
+        arr2[i] = logreg.classes_[arr2[i]]
+    print(arr2)
 
 print("-----------------------------------------")
